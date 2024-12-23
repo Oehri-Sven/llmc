@@ -31,7 +31,7 @@ class TesseraQ(BaseBlockwiseQuantization):
         model_type = self.config['model']['type']
         self.position_ids = (
             self.input['kwargs'][0].get('position_ids')
-            if model_type in ['Llama', 'Mistral', 'Qwen2']
+            if model_type in ['Llama', 'Mistral', 'Qwen2', 'Qwen2VL']
             else None
         )
 

@@ -32,6 +32,8 @@ def main(config):
     eval_list = get_eval_list(model, config)
     eval_model(model, None, eval_list, eval_pos='pretrain')
 
+    model.model.to("cuda")
+
     for modality in config.quant.get('quant_objects', ['language']):
         model.set_modality(modality)
         if not config.get('calib', False):
